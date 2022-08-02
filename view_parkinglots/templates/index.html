@@ -12,6 +12,7 @@
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=0ho66xnte9"></script>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -44,6 +45,19 @@
                 <input type="text" name="dest" size="50"/>
             </div>
         </div>
+
+        <br><br>
+
+        <div id="map" style="margin-left: auto; margin-right: auto; width:80%; height:400px;"></div>
+
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+            
+            var map = new naver.maps.Map('map', mapOptions);
+        </script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
